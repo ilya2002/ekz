@@ -1,0 +1,229 @@
+
+
+
+/*-------------------------*/
+/* DON'T TOUCH  */
+/*-------------------------*/
+
+
+
+/*-------------------------*/
+/* MAIN CLASS TRANSITION FOR EFFECT HOVER*/
+/*-------------------------*/
+
+.object {
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 0.25s ease-in-out; /** Firefox **/
+    -o-transition: all 0.25s ease-in-out; /** Opera **/
+}
+
+/*----------------------------*/
+/* BODY SETTINGS */
+/*----------------------------*/
+
+
+.cache{
+	width:100%;
+	height:100%;
+	min-height:1000px;
+	background-color:#FFF;
+
+}
+
+/*----------------------------*/
+/* CUSTOM SCROLLBAR  */
+/*----------------------------*/
+
+
+/*----------------------------*/
+/* HEADER BLACK TOP WITH LOGO */
+/*----------------------------*/
+
+#wrapper-header{
+	float:left;
+	width:105%;
+	height:65px;
+	background-color:#2E2D30;
+	opacity:0;
+}
+
+#main-header{
+	position:relative;
+	width:1200px;
+	left:50%;
+	margin-left:-600px;
+	height:auto;
+}
+
+.logo{
+	position:absolute;
+    margin-top:5px;
+	left:15px;
+	width: 40px;
+}
+
+#nnavv{
+    /* По левому краю выравниваю! */
+    /* Отступ. */
+    margin-bottom: 10;
+    /* Задаю ширину. */
+    width:400px;
+    /* Убираю маркеры*/
+    list-style: none;
+    /* Шрифт — жирным*/
+    font-weight: bold;
+    float: right;
+
+}
+#nnavv li{
+    /* Выравнивание! */
+    float: left;
+
+    /* Делаю элементы блочными. */
+    display: block;
+    /* Отступ. */
+    margin: 0px 20px;
+    /* Позиционирование относительно исходного места! */
+    position: relative;
+}
+#nnavv li a{
+    /* Цвет бэкграунда. */
+    background: #B0C4DE;
+    /* Делаю элементы блочными. */
+    display: block;
+    
+
+    /* Отступы. */
+    padding: 15px;
+    /* Цвет ссылки. */
+    color: #fff;
+    /* Форматирование текста*/
+    text-decoration:none;
+    /* Задаю скругленные углы на 2 пиксела*/
+    -moz-border-radius: 4;
+    -webkit-border-radius: 2;
+    border-radius: 4;
+    /* Тень для визуальной приподнятости текста*/
+    text-shadow:1px 1px 1px rgba(0,0,0,0.74); 
+}
+#nnavv li a:hover{
+    z-index: 5;
+    background: #4169E1;
+    color: #fff;
+    background: rgba(108,13,53,0.74); /* Заставляю выглядеть полупрозрачным! */
+}
+/* НАСТРАИВАЕМ ВЫПАДАЮЩИЕ ЭЛЕМЕНТЫ!!! */
+#nnavv ul{
+    /* Убираю маркеры у выпадающего списка*/
+    z-index: 1;
+
+    list-style:none;
+     /* Убираю ненужно за пределы экрана (говорят, это на 95% лучше чем «display:none;», т.к. дисплей нон некоторые программы игнорируют). */
+    opacity:0; /* При помощи прозрачности, скрываем <ul>. */
+    /* Делаем так, чтобы Webkit плавно показывал нам всплывающие элементы выпадающего списка при наведении мышки. */
+    -webkit-transition: 0.24s linear opacity; 
+    position:absolute;
+}
+#nnavv ul li{
+    /* Здесь я задаю отступ между элементами &lt;li&gt;. Это необходимо для разделения пунктов меню, его не было в предыдущей части статьи (просто забыл)*/
+    padding-top: 1px; 
+    float:none;
+
+}
+#nnavv ul a{
+    /* Делаю элементы блочными. */
+    display:block;
+    /* Запрещаю перенос строк текста на новую строку, чтобы создавался многострочный выпадающий элемент списка. */
+    white-space: nowrap; 
+}
+#nnavv li:hover ul{ /* Создаю выпадающий пункт, который появится при наведении. */
+    left:0; /* Возвращаю его обратно на экран пользователя, — когда нужно. */
+    opacity:1;
+  /* Убираю прозрачность*/
+}
+#nnavv li:hover a{ /* В этом стиле я устанавливаю свойства для элементов верхнего уровня, — в то время, когда показывается выпадающий список. */
+    /* Подчеркну*/
+ 
+    /* Сделаю полупрозрачным. */
+    background:rgba(109,15,53,0.74);
+    background:#4169E1;
+}
+#nnavv li:hover ul a{ /* Поменял некоторые стили первого уровня при появлении выпадающего элемента. */
+    /* Уберу форматирование*/
+    text-decoration:none;
+    -webkit-transition:-webkit-transform 0.077s linear;
+}
+#nnavv li:hover ul li a:hover{ /* Здесь я задаю стили для конкретных выпадающих пунктов, при наведении на них курсора — чтобы они отличались от тех элементов, куда курсор не попадает*/
+    -moz-transform:scale(1.07);
+    -webkit-transform:scale(1.07);
+    /* Задам цвет фона выпадающего элемента*/
+    background:#4682B4;
+    background:rgba(50,50,50,0.74); /* Сделаю полупрозрачным. */
+}
+.leftpanel{ /* Цвет бэкграунда. */
+    background: #B0C4DE;
+    /* Делаю элементы блочными. */
+    margin: 0px 1px 6px 1px;
+    display: block;
+    /* Отступы. */
+    padding: 5px;
+    /* Цвет ссылки. */
+    color: #fff;
+    /* Форматирование текста*/
+    
+    /* Задаю скругленные углы на 2 пиксела*/
+    -moz-border-radius: 2;
+    -webkit-border-radius: 2;
+    border-radius: 2;
+    padding: 12px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 400px;
+    position: absolute;
+
+    /* Тень для визуальной приподнятости текста*/
+    text-shadow:1px 1px 1px rgba(0,0,0,0.74); }
+    .leftpanel:hover{ background:rgba(50,50,50,0.74);
+    color: #fff;
+    text-decoration:none; list-style:none;cursor: pointer;
+}
+    .right-menu{
+    	float: right;
+    	background: #B0C4DE;
+    	width: 60px;
+    	border: 2px;
+    	margin-right: 55px;
+    	font-weight: bold;
+    	 text-decoration-color: white;
+    	 text-shadow:1px 1px 1px rgba(0,0,0,0.74);
+    	 padding: 0px 10px;
+    	 text-align: center;
+    	 
+    }
+     .right-menu:hover{ background:#4682B4;
+    background:rgba(50,50,50,0.74);}
+  .knopki{cursor: pointer;
+    	display: inline-block;
+    	color: #fff;
+    	background:black;
+    	margin-top: 10px;
+    }
+.human {
+
+    text-decoration: none;
+    width: 400px;
+    padding: 5px;
+    border: 1px black;
+}
+.chat {
+  margin-left: 600px;
+  width:600px;
+  margin-top: 10px
+}
+.file {
+ width: 50px;
+ height: 30px;
+ background: white;
+
+}
