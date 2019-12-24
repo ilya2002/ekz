@@ -127,3 +127,19 @@ public function search($params)
         ->andFilterWhere(['like', User_roles::tableName().'.user_role', $this→roleName]);
     return $dataProvider;
 }
+.......
+
+
+2
+3
+4
+5
+6
+7
+<?=GridView::widget(['dataProvider' => $dataProvider,'filterModel' => $searchModel,
+    'columns' => [['class' => 'yii\grid\SerialColumn'],
+        ['attribute' => 'user_name','label' => 'Логин'],
+        ['attribute' => 'fio','label' => 'ФИО'],
+        ['attribute' => 'roleName','label' => 'Роль', 'value'=>'role.user_role'],
+        ['class' => 'yii\grid\ActionColumn']]]);
+?>
