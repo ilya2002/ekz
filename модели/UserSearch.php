@@ -68,6 +68,44 @@ public function search($params) {
     return $dataProvider;
 }
 
+.........
+
+
+/* Связь с моделью Страны*/
+public function getCountry()
+{
+    return $this->hasOne(Country::className(), ['id' => 'country_id']);
+}
+
+/* Геттер для названия страны */
+public function getCountryName() {
+    return $this->country->country_name;
+}
+
+/* Название атрибута для вывода на экран */
+public function attributeLabels() {
+    return [
+        /* Другие названия атрибутов */
+        'fullName' => 'Full Name',
+        'countryName' => 'Country Name',
+    ];
+}
+
+........
+
+echo GridView::widget([
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
+        'id',
+        'fullName',
+        'countryName',
+        ['class' => 'yii\grid\ActionColumn'],
+    ]
+]);
+
+
 ..........
 public function search($params)
 {
