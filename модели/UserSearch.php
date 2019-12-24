@@ -67,3 +67,25 @@ public function search($params) {
 
     return $dataProvider;
 }
+
+..........
+public function search($params)
+{
+    $query = Users::find();
+    $query→joinWith(['role']);
+    $dataProvider = new ActiveDataProvider([
+        'query' => $query,
+    ]);
+    $dataProvider->sort->attributes['roleName'] = [
+        'asc' => [User_roles::tableName().'.user_role' => SORT_ASC],
+        'desc' => [User_roles::tableName().'.user_role' => SORT_DESC],
+    ];
+    $this→load($params);
+    if (!$this->validate()) {
+        return $dataProvider;
+    }
+    $query->andFilterWhere(['like', 'user_name', $this→user_name])
+        ->andFilterWhere(['like', 'fio', $this→fio])
+        ->andFilterWhere(['like', User_roles::tableName().'.user_role', $this→roleName]);
+    return $dataProvider;
+}
